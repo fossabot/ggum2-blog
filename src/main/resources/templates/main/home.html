@@ -9,36 +9,43 @@
 <body>
 	<div layout:fragment="content">
 		<!-- Countdown -->
-		<div class="js-countdown u-countdown-v3 g-line-height-1_2 g-font-weight-300 text-center text-uppercase" 
-			data-end-date="2019/08/09" data-month-format="%m"
-			data-days-format="%D" data-hours-format="%H" data-minutes-format="%M"
-			data-seconds-format="%S">
-			<div class="d-inline-block g-mx-20 g-mb-20">
-				<div class="js-cd-days g-font-size-36 mb-0">12</div>
-				<span class="g-font-size-12">Days</span>
+		<section class="g-bg-gray-dark-v1 g-color-white g-py-10">
+			<div class="container">
+				<div class="text-center g-mb-60">
+					<h2 class="h4">꿈이가 태어난지</h2>
+				</div>
 			</div>
-
-			<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
-
-			<div class="d-inline-block g-mx-20 g-mb-20">
-				<div class="js-cd-hours g-font-size-36 mb-0">01</div>
-				<span class="g-font-size-12">Hours</span>
+			<div class="js-countdown u-countdown-v3 g-line-height-1_2 g-font-weight-300 text-center text-uppercase" 
+					data-start-date="2017/08/20" 
+					data-month-format="%m" data-days-format="%D" data-hours-format="%H" data-minutes-format="%M" data-seconds-format="%S">
+	
+				<div class="d-inline-block g-mx-20 g-mb-20">
+					<div class="js-cd-days g-font-size-36 mb-0">12</div>
+					<span class="g-font-size-12">Days</span>
+				</div>
+	
+				<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
+	
+				<div class="d-inline-block g-mx-20 g-mb-20">
+					<div class="js-cd-hours g-font-size-36 mb-0">01</div>
+					<span class="g-font-size-12">Hours</span>
+				</div>
+	
+				<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
+	
+				<div class="d-inline-block g-mx-20 g-mb-20">
+					<div class="js-cd-minutes g-font-size-36 mb-0">52</div>
+					<span class="g-font-size-12">Minutes</span>
+				</div>
+	
+				<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
+	
+				<div class="d-inline-block g-mx-20 g-mb-20">
+					<div class="js-cd-seconds g-font-size-36 mb-0">52</div>
+					<span class="g-font-size-12">Seconds</span>
+				</div>
 			</div>
-
-			<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
-
-			<div class="d-inline-block g-mx-20 g-mb-20">
-				<div class="js-cd-minutes g-font-size-36 mb-0">52</div>
-				<span class="g-font-size-12">Minutes</span>
-			</div>
-
-			<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
-
-			<div class="d-inline-block g-mx-20 g-mb-20">
-				<div class="js-cd-seconds g-font-size-36 mb-0">52</div>
-				<span class="g-font-size-12">Seconds</span>
-			</div>
-		</div>
+		</section>
 		<!-- End Countdown -->
 	</div>
 	
@@ -48,14 +55,14 @@
 		<script src="unify/js/components/hs.countdown.js"></script>
 		<script>
 			$(document).on('ready', function() {
-				// initialization of countdowns
 				var countdowns = $.HSCore.components.HSCountdown.init( '.js-countdown', {
 					yearsElSelector : '.js-cd-years',
 					monthElSelector : '.js-cd-month',
 					daysElSelector : '.js-cd-days',
 					hoursElSelector : '.js-cd-hours',
 					minutesElSelector : '.js-cd-minutes',
-					secondsElSelector : '.js-cd-seconds'
+					secondsElSelector : '.js-cd-seconds',
+					elapse: true,
 				});
 			});
 		</script>
