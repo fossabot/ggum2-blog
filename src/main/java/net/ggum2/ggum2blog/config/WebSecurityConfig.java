@@ -13,14 +13,16 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
-		http.authorizeRequests()
+		http
+			.csrf().disable()		// temporary setting
+			.authorizeRequests()
 				.antMatchers("/").authenticated()
 				.and()
 				.formLogin().loginPage("/login").permitAll()
 				.and()
-				.logout().permitAll();
+				.logout().logoutSuccessUrl("/login").permitAll();
 	}
-	
+
 	@Autowired
 	public void configure(AuthenticationManagerBuilder auth) throws Exception {
 		auth.inMemoryAuthentication()

@@ -7,7 +7,7 @@
 <body>
 	<!-- Sidebar Navigation -->
 	<div th:fragment="sidebar" id="js-header" class="u-header u-header--side" data-header-position="left" data-header-breakpoint="lg">
-		<div class="u-header__sections-container g-bg-white g-brd-right--lg g-brd-gray-light-v5 g-py-10 g-py-40--lg g-px-14--lg">
+		<div class="u-header__sections-container g-bg-white g-brd-right--lg g-brd-gray-light-v5 g-py-10 g-py-10--lg g-px-14--lg">
 			<div class="u-header__section u-header__section--light">
 				<nav class="navbar navbar-toggleable-md">
 					<div class="js-mega-menu container">
@@ -26,10 +26,10 @@
 						<!--User Info-->
 						<div class="row">
 							<!-- Figure -->
-							<figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-15">
+							<figure class="u-block-hover g-bg-white g-rounded-4 g-pa-15">
 								<div class="d-flex justify-content-start">
 									<!-- Figure Image -->
-									<img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="custom/img/user.png" alt="Image Description">
+									<img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="custom/img/user.png" alt="User Image">
 									<!-- Figure Image -->
 
 									<!-- Figure Info -->
@@ -43,29 +43,26 @@
 									<!-- End Figure Info -->
 
 									<!-- Figure Caption -->
-									<figcaption class="u-block-hover__additional--fade g-bg-white-opacity-0_9 g-pa-30">
+									<figcaption class="u-block-hover__additional--fade g-bg-white-opacity-0_9 g-pa-10">
 										<div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
 											<!-- Figure Social Icons -->
 											<ul class="list-inline text-center g-flex-middle-item">
 												<li class="list-inline-item align-middle g-mx-7">
 													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
-														<i class="icon-finance-067 u-line-icon-pro"></i>
+														<i class="icon-user"></i>
 													</a>
 												</li>
 												<li class="list-inline-item align-middle g-mx-7">
 													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
-														<i class="icon-finance-206 u-line-icon-pro"></i>
+														<i class="icon-settings"></i>
 													</a>
 												</li>
 												<li class="list-inline-item align-middle g-mx-7">
-													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
-														<i class="icon-communication-062 u-line-icon-pro"></i>
-													</a>
-												</li>
-												<li class="list-inline-item align-middle g-mx-7">
-													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
-														<i class="icon-electronics-005 u-line-icon-pro"></i>
-													</a>
+													<form action="/logout" method="post">
+														<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#" onclick="this.parentNode.submit()">
+															<i class="icon-logout"></i>
+														</a>
+													</form>
 												</li>
 											</ul>
 											<!-- End Figure Social Icons -->
@@ -78,20 +75,21 @@
 						</div>
 						<!-- End User Info -->
 
+
 						<!-- Navigation -->
 						<div class="collapse navbar-collapse align-items-center flex-sm-row g-mt-20 g-mt-0--lg g-mb-40" id="navBar">
 							<ul class="navbar-nav ml-auto text-uppercase g-font-weight-600 u-sub-menu-v1">
 
 								<!--Home-->
-								<li class="nav-item active hs-has-sub-menu g-my-5">
-									<a href="#" class="nav-link" id="home" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">
+								<li class="nav-item active g-my-5">
+									<a href="/" class="nav-link" id="home" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">
 										Home<span class="sr-only">(current)</span>
 									</a>
 								</li>
 								<!--End Home-->
 
 								<li class="nav-item g-my-5">
-									<a href="#" class="nav-link">Features</a>
+									<a href="#" class="nav-link">Blog</a>
 								</li>
 
 								<li class="nav-item hs-has-mega-menu g-my-5"><a href="#"
@@ -171,23 +169,20 @@
 
 						<div class="text-center hidden-lg-down">
 							<ul class="list-inline g-mb-10">
-								<li class="list-inline-item g-mx-10" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Facebook">
-									<a href="#" class="g-color-main g-color-primary--hover"> <i
-										class="fa fa-facebook"></i>
-								</a>
+								<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
+									<a href="#" class="g-color-main g-color-primary--hover">
+										<i class="fa fa-facebook"></i>
+									</a>
 								</li>
-								<li class="list-inline-item g-mx-10" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Instagram">
-									<a href="#" class="g-color-main g-color-primary--hover"> <i
-										class="fa fa-instagram"></i>
-								</a>
+								<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="" data-original-title="GitHub">
+									<a href="#" class="g-color-main g-color-primary--hover">
+										<i class="fa fa-github"></i>
+									</a>
 								</li>
-								<li class="list-inline-item g-mx-10" data-toggle="tooltip"
-									data-placement="top" title="" data-original-title="Twitter">
-									<a href="#" class="g-color-main g-color-primary--hover"> <i
-										class="fa fa-twitter"></i>
-								</a>
+								<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="" data-original-title="Trello">
+									<a href="#" class="g-color-main g-color-primary--hover">
+										<i class="fa fa-trello"></i>
+									</a>
 								</li>
 							</ul>
 

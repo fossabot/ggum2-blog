@@ -1,5 +1,5 @@
 <!DOCTYPE html>
-<html lang="en" 
+<html lang="en"
 	  xmlns:th="http://www.thymeleaf.org"
 	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
@@ -9,27 +9,28 @@
 	<meta charset="utf-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
 	<meta http-equiv="x-ua-compatible" content="ie=edge">
-	
+
 	<!-- favicon -->
 	<link rel="shortcut icon" href="favicon.ico">
-	
+
 	<!-- Google Fonts -->
 	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700">
-	
+
 	<!-- CSS Global Compulsory -->
 	<link rel="stylesheet" href="unify/vendor/bootstrap/bootstrap.min.css">
-	
+
 	<!-- CSS Implementing Plugins -->
 	<link rel="stylesheet" href="unify/vendor/icon-awesome/css/font-awesome.min.css">
+	<link rel="stylesheet" href="unify/vendor/icon-line/css/simple-line-icons.css">
 	<link rel="stylesheet" href="unify/vendor/icon-line-pro/style.css">
 	<link rel="stylesheet" href="unify/vendor/icon-hs/style.css">
-	
+	<link rel="stylesheet" href="unify/vendor/hamburgers/hamburgers.min.css">
 	<link rel="stylesheet" href="unify/vendor/hs-megamenu/src/hs.megamenu.css">
 	<link rel="stylesheet" href="unify/vendor/animate.css">
-	
+
 	<!-- CSS Unify -->
 	<link rel="stylesheet" href="unify/css/unify.css">
-	
+
 	<!-- CSS Customization -->
 	<link rel="stylesheet" href="unify/css/custom.css">
 </head>
@@ -41,20 +42,20 @@
 	</div>
 	<!-- End Sidebar Navigation -->
 
-	<!-- <main>  --> 
-	
+	<!-- <main>  -->
+
 	<!-- Contents -->
 	<div layout:fragment="content">
 		Content
 	</div>
-	<!-- End Contents --> 
-	
+	<!-- End Contents -->
+
 	<!-- Footer -->
 	<footer th:replace="layout/footer :: footer">
 		Footer
 	</footer>
-	<!-- End Footer --> 
-	
+	<!-- End Footer -->
+
 	<!-- </main> -->
 
 	<!-- JS Global Compulsory -->
@@ -91,9 +92,9 @@
 			});
 		});
 	</script>
-	
+
 	<th:block layout:fragment="script">
 	</th:block>
-	
+
 </body>
 </html>
