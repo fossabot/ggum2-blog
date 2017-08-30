@@ -1,0 +1,27 @@
+spring:
+  session:
+    store-type: redis
+    redis:
+      flush-mode: on-save
+
+  thymeleaf:
+    mode: LEGACYHTML5
+
+---
+
+spring:
+  profiles: dev
+
+  redis:
+    host: 127.0.0.1
+    port: 6379
+
+  devtools:
+    livereload:
+      enabled: true
+  thymeleaf:
+    cache: false
+
+---
+spring:
+  profiles: prod

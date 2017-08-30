@@ -11,21 +11,21 @@ import org.springframework.stereotype.Component;
 
 import redis.embedded.RedisServer;
 
-@Profile({"local", "unittest"})
+@Profile({"dev"})
 @Component
 public class EmbededRedis {
 
 	@Value("${spring.redis.port}")
 	private int port;
-	
+
 	private RedisServer redisServer;
-	
+
 	@PostConstruct
 	public void start() throws IOException {
 		redisServer = new RedisServer(this.port);
 		redisServer.start();
 	}
-	
+
 	@PreDestroy
 	public void stop() {
 		redisServer.stop();
