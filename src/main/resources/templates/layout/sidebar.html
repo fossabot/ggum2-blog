@@ -11,63 +11,87 @@
 			<div class="u-header__section u-header__section--light">
 				<nav class="navbar navbar-toggleable-md">
 					<div class="js-mega-menu container">
-						
+
 						<!-- Responsive Toggle Button -->
 						<button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-right-0"
 							type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-							<span class="hamburger hamburger--slider"> 
-								<span class="hamburger-box"> 
+							<span class="hamburger hamburger--slider">
+								<span class="hamburger-box">
 									<span class="hamburger-inner"></span>
 								</span>
 							</span>
 						</button>
 						<!-- End Responsive Toggle Button -->
 
-						<!-- Logo -->
-						<a href="/" class="navbar-brand g-mb-40--lg">
-							<img src="unify/img/logo/logo-1.png" alt="Image Description">
-						</a>
-						<!-- End Logo -->
+						<!--User Info-->
+						<div class="row">
+							<!-- Figure -->
+							<figure class="u-block-hover u-shadow-v19 g-bg-white g-rounded-4 g-pa-15">
+								<div class="d-flex justify-content-start">
+									<!-- Figure Image -->
+									<img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="custom/img/user.png" alt="Image Description">
+									<!-- Figure Image -->
+
+									<!-- Figure Info -->
+									<div class="d-block">
+										<div class="g-mb-5">
+											<h4 class="h5 g-mb-0">정현수</h4>
+											<em class="d-block g-color-primary g-font-style-normal g-font-size-default">Admin</em>
+										</div>
+										<em class="d-block g-color-gray-dark-v5 g-font-style-normal g-font-size-13 g-mb-2">admin@ggum2.net</em>
+									</div>
+									<!-- End Figure Info -->
+
+									<!-- Figure Caption -->
+									<figcaption class="u-block-hover__additional--fade g-bg-white-opacity-0_9 g-pa-30">
+										<div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
+											<!-- Figure Social Icons -->
+											<ul class="list-inline text-center g-flex-middle-item">
+												<li class="list-inline-item align-middle g-mx-7">
+													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
+														<i class="icon-finance-067 u-line-icon-pro"></i>
+													</a>
+												</li>
+												<li class="list-inline-item align-middle g-mx-7">
+													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
+														<i class="icon-finance-206 u-line-icon-pro"></i>
+													</a>
+												</li>
+												<li class="list-inline-item align-middle g-mx-7">
+													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
+														<i class="icon-communication-062 u-line-icon-pro"></i>
+													</a>
+												</li>
+												<li class="list-inline-item align-middle g-mx-7">
+													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
+														<i class="icon-electronics-005 u-line-icon-pro"></i>
+													</a>
+												</li>
+											</ul>
+											<!-- End Figure Social Icons -->
+										</div>
+									</figcaption>
+									<!-- End Figure Caption -->
+								</div>
+							</figure>
+							<!-- End Figure -->
+						</div>
+						<!-- End User Info -->
 
 						<!-- Navigation -->
 						<div class="collapse navbar-collapse align-items-center flex-sm-row g-mt-20 g-mt-0--lg g-mb-40" id="navBar">
 							<ul class="navbar-nav ml-auto text-uppercase g-font-weight-600 u-sub-menu-v1">
-								<li class="nav-item active hs-has-sub-menu g-my-5">
-									<a href="#" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">
-										Home <span class="sr-only">(current)</span>
-									</a>
-									
-									<!-- Submenu -->
-									<ul class="hs-sub-menu list-unstyled" id="nav-submenu-1" aria-labelledby="nav-link-1">
-										<li>
-											<a href="#">Option 1</a>
-										</li>
-										<li class="hs-has-sub-menu active">
-											<a href="#" id="nav-link-2" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-2">
-												Option 2
-											</a> 
-											<!-- Submenu (level 2) -->
-											<ul class="hs-sub-menu active list-unstyled" id="nav-submenu-2" aria-labelledby="nav-link-2">
-												<li class="dropdown-item active">
-													<a href="#">– Sub Option 2.1</a>
-												</li>
-												<li class="dropdown-item"><a href="#">– Sub Option
-														2.2</a></li>
-												<li class="dropdown-item"><a href="#">– Sub Option
-														2.3</a></li>
-												<li class="dropdown-item"><a href="#">– Sub Option
-														2.4</a></li>
-												<li class="dropdown-item"><a href="#">– Sub Option
-														2.5</a></li>
-											</ul> <!-- End Submenu (level 2) --></li>
-										<li><a href="#">Option 3</a></li>
-										<li><a href="#">Option 4</a></li>
-										<li><a href="#">Option 5</a></li>
-										<li><a href="#">Option 6</a></li>
-										<li><a href="#">Option 7</a></li>
-									</ul> <!-- End Submenu --></li>
 
-								<li class="nav-item g-my-5"><a href="#" class="nav-link">Features</a>
+								<!--Home-->
+								<li class="nav-item active hs-has-sub-menu g-my-5">
+									<a href="#" class="nav-link" id="home" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">
+										Home<span class="sr-only">(current)</span>
+									</a>
+								</li>
+								<!--End Home-->
+
+								<li class="nav-item g-my-5">
+									<a href="#" class="nav-link">Features</a>
 								</li>
 
 								<li class="nav-item hs-has-mega-menu g-my-5"><a href="#"
