@@ -7,7 +7,7 @@ import org.springframework.web.servlet.ModelAndView;
 
 @Controller
 public class LoginController {
-	
+
 	@RequestMapping(value = "/", method = RequestMethod.GET)
 	public ModelAndView home_view() {
 		ModelAndView mv = new ModelAndView("main/home");
@@ -19,7 +19,7 @@ public class LoginController {
 		ModelAndView mv = new ModelAndView("login/login");
 		return mv;
 	}
-	
+
 	@RequestMapping(value = "/signup", method = RequestMethod.GET)
 	public ModelAndView signup_view() {
 		ModelAndView mv = new ModelAndView("login/signup");
