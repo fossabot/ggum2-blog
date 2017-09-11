@@ -47,6 +47,10 @@ spring:
     hibernate:
       ddl-auto: create-drop
 
+logging:
+  level:
+    org.springframework.*: DEBUG
+
 ---
 spring:
   profiles: prod
