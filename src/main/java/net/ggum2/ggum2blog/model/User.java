@@ -1,55 +1,18 @@
 package net.ggum2.ggum2blog.model;
 
+import net.ggum2.ggum2blog.model.enums.Role;
 import org.springframework.security.core.GrantedAuthority;
 import org.springframework.security.core.userdetails.UserDetails;
 
 import java.util.Collection;
+import java.util.Date;
 
 /**
  * Created by hyunsoo0813 on 2017. 9. 6..
  */
-public class User  implements UserDetails {
+public class User {
 
-    @Override
-    public Collection<? extends GrantedAuthority> getAuthorities() {
-        return null;
-    }
-
-    @Override
-    public String getPassword() {
-        return null;
-    }
-
-    @Override
-    public String getUsername() {
-        return null;
-    }
-
-    @Override
-    public boolean isAccountNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isAccountNonLocked() {
-        return false;
-    }
-
-    @Override
-    public boolean isCredentialsNonExpired() {
-        return false;
-    }
-
-    @Override
-    public boolean isEnabled() {
-        return false;
-    }
-
-    public static enum Role {
-        ADMIN, FAMILY, FRIEND, ANONYMOUS
-    }
-
-    private String id;
+    private String username;
 
     private String password;
 
@@ -60,4 +23,7 @@ public class User  implements UserDetails {
     private Role role;
 
     private boolean isEnabled;
+
+    private Date created;
+
 }
