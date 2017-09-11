@@ -19,17 +19,26 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
 		http.authorizeRequests()
-				.antMatchers("/").authenticated()
+				.antMatchers("/unify/**", "/custom/**").permitAll()		// Static Files
+				.antMatchers("/admin/**").hasRole("ADMIN")				// Admin Pages
+				.antMatchers("/h2-console/**").hasRole("ADMIN")
+				.anyRequest().authenticated()
 				.and()
-				.formLogin().loginPage("/login").permitAll()
+			.formLogin()
+				.loginPage("/login")
+				.permitAll()
 				.and()
-				.logout().logoutSuccessUrl("/login").permitAll();
+			.logout()
+				.permitAll()
+				.and()
+			.httpBasic();
+
+		http.csrf().ignoringAntMatchers("/h2-console/**");
 
 		// spring security configurations for h2 database
 		// https://springframework.guru/using-the-h2-database-console-in-spring-boot-with-spring-security/
 		for (String profile : environment.getActiveProfiles()) {
 			if (profile.equals("dev")) {
-				http.csrf().disable();
 				http.headers().frameOptions().disable();
 			}
 		}

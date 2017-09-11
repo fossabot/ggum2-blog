@@ -2,7 +2,7 @@
 <html lang="en" xmlns:th="http://www.thymeleaf.org">
   <head>
     <!-- Title -->
-    <title>Login Page 7 | Unify - Responsive Website Template</title>
+    <title>알콩달콩 꿈이네 - Login</title>
 
     <!-- Required Meta Tags Always Come First -->
     <meta charset="utf-8">
@@ -16,17 +16,22 @@
     <link rel="stylesheet" href="//fonts.googleapis.com/css?family=Open+Sans%3A400%2C300%2C500%2C600%2C700">
 
     <!-- CSS Global Compulsory -->
-    <link rel="stylesheet" href="unify/vendor/bootstrap/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="/static/unify/vendor/bootstrap/bootstrap.min.css"
+          th:href="@{/unify/vendor/bootstrap/bootstrap.min.css}">
 
     <!-- CSS Implementing Plugins -->
-    <link rel="stylesheet" href="unify/vendor/icon-awesome/css/font-awesome.min.css">
-    <link rel="stylesheet" href="unify/vendor/animate.css">
+    <link rel="stylesheet" type="text/css" href="/static/unify/vendor/icon-awesome/css/font-awesome.min.css"
+          th:href="@{/unify/vendor/icon-awesome/css/font-awesome.min.css}">
+    <link rel="stylesheet" type="text/css" href="/static/unify/vendor/animate.css"
+          th:href="@{/unify/vendor/animate.css}">
 
     <!-- CSS Unify -->
-    <link rel="stylesheet" href="unify/css/unify.css">
+    <link rel="stylesheet" type="text/css" href="/static/unify/css/unify.css"
+          th:href="@{/unify/css/unify.css}">
 
     <!-- CSS Customization -->
-    <link rel="stylesheet" href="unify/css/custom.css">
+    <link rel="stylesheet" type="text/css" href="/static/unify/css/custom.css"
+          th:href="@{/unify/css/custom.css}">
   </head>
 
   <body>
@@ -52,7 +57,7 @@
                     <div class="row justify-content-between">
                       <div class="col align-self-center">
                         <label class="form-check-inline u-check g-color-gray-dark-v5 g-font-size-12 g-pl-25 mb-0">
-                          <input class="hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox">
+                          <input class="hidden-xs-up g-pos-abs g-top-0 g-left-0" type="checkbox" disabled="disabled">
                           <div class="u-check-icon-checkbox-v6 g-absolute-centered--y g-left-0">
                             <i class="fa" data-check-icon="&#xf00c"></i>
                           </div>
@@ -63,6 +68,10 @@
                         <a class="g-font-size-12" href="#">Forgot password?</a>
                       </div>
                     </div>
+                  </div>
+
+                  <div class="mb-4" th:if="${param.error}">
+                    <p class="text-danger">로그인을 실패하였습니다. 아이디 또는 비밀번호를 확인하세요.</p>
                   </div>
 
                   <div class="mb-4">
@@ -99,15 +108,15 @@
     </main>
 
     <!-- JS Global Compulsory -->
-    <script src="unify/vendor/jquery/jquery.min.js"></script>
-    <script src="unify/vendor/jquery-migrate/jquery-migrate.min.js"></script>
-    <script src="unify/vendor/tether.min.js"></script>
-    <script src="unify/vendor/bootstrap/bootstrap.min.js"></script>
+    <script type="javascript" src="/static/unify/vendor/jquery/jquery.min.js" th:src="@{/unify/vendor/jquery/jquery.min.js}"></script>
+    <script type="javascript" src="/static/unify/vendor/jquery-migrate/jquery-migrate.min.js" th:src="@{/unify/vendor/jquery-migrate/jquery-migrate.min.js}"></script>
+    <script type="javascript" src="/static/unify/vendor/tether.min.js" th:src="@{/unify/vendor/tether.min.js}"></script>
+    <script type="javascript" src="/static/unify/vendor/bootstrap/bootstrap.min.js" th:src="@{/unify/vendor/bootstrap/bootstrap.min.js}"></script>
 
     <!-- JS Unify -->
-    <script src="unify/js/hs.core.js"></script>
+    <script type="javascript" src="/static/unify/js/hs.core.js" th:src="@{/unify/js/hs.core.js}"></script>
 
     <!-- JS Customization -->
-    <script src="unify/js/custom.js"></script>
+    <script type="javascript" src="/static/unify/js/custom.js" th:src="@{/unify/js/custom.js}"></script>
   </body>
 </html>
