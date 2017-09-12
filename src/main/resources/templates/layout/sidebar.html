@@ -1,5 +1,6 @@
 <!DOCTYPE html>
-<html xmlns:th="http://www.thymeleaf.org">
+<html xmlns:th="http://www.thymeleaf.org"
+      xmlns:sec="http://www.thymeleaf.org/extras/spring-security">
 <head>
 
 </head>
@@ -29,13 +30,13 @@
 							<figure class="u-block-hover g-bg-white g-rounded-4 g-pa-10">
 								<div class="d-flex justify-content-start">
 									<!-- Figure Image -->
-									<img class="g-width-60 g-height-60 rounded-circle g-mr-15" src="custom/img/user.png" alt="User Image">
+									<img class="g-width-60 g-height-60 rounded-circle g-mr-15" th:src="@{/custom/img/user.png}" alt="User Image">
 									<!-- Figure Image -->
 
 									<!-- Figure Info -->
 									<div class="d-block">
 										<div class="g-mb-5">
-											<h4 class="h5 g-mb-0">정현수</h4>
+											<h4 class="h5 g-mb-0" sec:authentication="name">정현수</h4>
 											<em class="d-block g-color-primary g-font-style-normal g-font-size-default">Admin</em>
 										</div>
 										<em class="d-block g-color-gray-dark-v5 g-font-style-normal g-font-size-13 g-mb-2">admin@ggum2.net</em>

@@ -1,19 +1,21 @@
 package net.ggum2.ggum2blog.repository.entity;
 
 import lombok.AllArgsConstructor;
-import lombok.Data;
+import lombok.Builder;
+import lombok.Getter;
 import lombok.NoArgsConstructor;
-import net.ggum2.ggum2blog.model.enums.Role;
 
 import javax.persistence.Entity;
 import javax.persistence.Id;
+import javax.persistence.Table;
 import java.util.Date;
 
-/**
- * Created by hyunsoo0813 on 2017. 9. 11..
- */
 @Entity
-@Data
+@Getter
+@Builder
+@NoArgsConstructor
+@AllArgsConstructor
+@Table(name = "USER")
 public class UserEntity {
 
     @Id
@@ -23,7 +25,7 @@ public class UserEntity {
 
     private String name;
 
-    private Role role;
+    private String role;
 
     private boolean isEnabled;
 

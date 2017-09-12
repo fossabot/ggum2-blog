@@ -38,6 +38,7 @@ dependencies {
 
 	// view
 	compile('org.springframework.boot:spring-boot-starter-thymeleaf')
+	compile('org.thymeleaf.extras:thymeleaf-extras-springsecurity4')
 	compile('net.sourceforge.nekohtml:nekohtml')
 
 	// data
