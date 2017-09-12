@@ -1,17 +1,19 @@
 package net.ggum2.ggum2blog.config.handler;
 
+import org.springframework.core.Ordered;
+import org.springframework.core.annotation.Order;
 import org.springframework.http.HttpStatus;
+import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.ControllerAdvice;
 import org.springframework.web.bind.annotation.ExceptionHandler;
 import org.springframework.web.bind.annotation.ResponseStatus;
 import org.springframework.web.servlet.ModelAndView;
-import org.springframework.web.servlet.config.annotation.EnableWebMvc;
 
 import javax.servlet.http.HttpServletRequest;
 
-@EnableWebMvc
+@Order(Ordered.HIGHEST_PRECEDENCE)
 @ControllerAdvice
-public class GlobalDefaultExceptionHandler {
+public class GlobalExceptionHandler {
 
     @ResponseStatus(value = HttpStatus.FORBIDDEN)
     public ModelAndView fobiddenExceptionHandler(HttpServletRequest req, Exception e) {

@@ -1,13 +1,16 @@
 package net.ggum2.ggum2blog.config;
 
 import lombok.extern.slf4j.Slf4j;
+import net.ggum2.ggum2blog.config.interceptor.CustomWebSecurityFilter;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
+import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
 
 @Slf4j
 @Configuration
@@ -16,6 +19,11 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private Environment environment;
+
+	@Override
+	public void configure(WebSecurity web) throws Exception {
+
+	}
 
 	@Override
 	protected void configure(HttpSecurity http) throws Exception {
@@ -32,8 +40,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 			.logout()
 				.permitAll()
 				.and()
-			.exceptionHandling()
-				.and()
+			.addFilterAfter(new CustomWebSecurityFilter(), BasicAuthenticationFilter.class)
 			.httpBasic();
 
 		http.csrf().ignoringAntMatchers("/h2-console/**");
@@ -55,4 +62,5 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 				.and()
 				.withUser("admin@ggum2.net").password("P@ssw0rd").roles("USER", "ADMIN");
 	}
+
 }
