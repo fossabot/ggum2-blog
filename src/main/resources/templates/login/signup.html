@@ -43,28 +43,27 @@
                 </header>
 
                 <!-- Form -->
-                <form class="g-py-15">
-                  <div class="row">
-                    <div class="col-xs-12 col-sm-6 mb-4">
-                      <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" placeholder="First Name">
-                    </div>
+                <form class="g-py-15" method="post" th:action="@{/signup}">
 
-                    <div class="col-xs-12 col-sm-6 mb-4">
-                      <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="tel" placeholder="Last Name">
-                    </div>
+                  <div class="mb-4">
+                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" name="email" placeholder="E-Mail (ID)">
                   </div>
 
                   <div class="mb-4">
-                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="email" placeholder="E-Mail">
+                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" name="name" placeholder="Name">
+                  </div>
+
+                  <div class="mb-4">
+                    <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="text" name="nickname" placeholder="Nickname">
                   </div>
 
                   <div class="row">
                     <div class="col-xs-12 col-sm-6 mb-4">
-                      <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="password" placeholder="Password">
+                      <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="password" name="password" placeholder="Password">
                     </div>
 
                     <div class="col-xs-12 col-sm-6 mb-4">
-                      <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="password" placeholder="Password">
+                      <input class="form-control g-color-black g-bg-white g-bg-white--focus g-brd-gray-light-v4 g-brd-primary--hover rounded g-py-15 g-px-15" type="password" name="password" placeholder="Password">
                     </div>
                   </div>
 
@@ -79,7 +78,7 @@
                       </label>
                     </div>
                     <div class="col align-self-center text-right">
-                      <button class="btn btn-md u-btn-primary rounded g-py-13 g-px-25" type="button">Signup</button>
+                      <input type="submit" class="btn btn-md u-btn-primary rounded g-py-13 g-px-25" value="Signup">
                     </div>
                   </div>
                 </form>

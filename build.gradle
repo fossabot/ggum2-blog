@@ -49,6 +49,9 @@ dependencies {
 	// tool
 	runtime('org.springframework.boot:spring-boot-devtools')
 	compileOnly('org.projectlombok:lombok')
+	compile('org.modelmapper:modelmapper:1.1.0')
+	compile('joda-time:joda-time')
+
 
 	// test
 	testCompile('org.springframework.boot:spring-boot-starter-test')

@@ -1,12 +1,15 @@
 CREATE TABLE USER (
-  username varchar(50) not null primary key,
-  password varchar(50) not null,
+  id varchar(100) not null primary key,
+  password varchar(255) not null,
   name varchar(50) not null,
+  nickname varchar(50) not null UNIQUE,
   role varchar(20) not null default 'FRIEND',
-  is_enabled tinyint(1) default false,
-  created datetime not null default NOW()
+  created datetime not null default NOW(),
+  updated datetime not null default NOW(),
+  password_changed datetime not null default NOW(),
+  is_enabled tinyint(1) not null default false,
+  is_account_non_expired tinyint(1) not null default true,
+  is_account_non_locked tinyint(1) not null default true,
+  is_credentials_non_expired tinyint(1) not null default true
 );
 
-INSERT INTO USER (username, password, name, role, is_enabled)
-  SELECT 'admin@ggum2.net', 'P@ssw0rd', 'Hyunsoo Jung', 'ADMIN', TRUE FROM dual
-  WHERE NOT EXISTS(SELECT * FROM USER WHERE username = 'admin@ggum2.net');
