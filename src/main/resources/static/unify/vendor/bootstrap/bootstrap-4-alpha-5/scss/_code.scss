@@ -15,7 +15,7 @@ code {
   @include border-radius($border-radius);
 }
 
-// User input typically entered via keyboard
+// Account input typically entered via keyboard
 kbd {
   padding: $code-padding-y $code-padding-x;
   font-size: $code-font-size;

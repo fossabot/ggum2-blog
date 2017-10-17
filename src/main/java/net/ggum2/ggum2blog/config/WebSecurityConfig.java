@@ -5,16 +5,19 @@ import net.ggum2.ggum2blog.config.interceptor.CustomWebSecurityFilter;
 import net.ggum2.ggum2blog.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
-import org.springframework.context.annotation.Configuration;
 import org.springframework.core.env.Environment;
 import org.springframework.security.config.annotation.authentication.builders.AuthenticationManagerBuilder;
 import org.springframework.security.config.annotation.authentication.configuration.EnableGlobalAuthentication;
-import org.springframework.security.config.annotation.authentication.configurers.GlobalAuthenticationConfigurerAdapter;
 import org.springframework.security.config.annotation.web.builders.HttpSecurity;
 import org.springframework.security.config.annotation.web.builders.WebSecurity;
 import org.springframework.security.config.annotation.web.configuration.WebSecurityConfigurerAdapter;
+import org.springframework.security.core.userdetails.UserDetailsService;
 import org.springframework.security.crypto.bcrypt.BCryptPasswordEncoder;
 import org.springframework.security.web.authentication.www.BasicAuthenticationFilter;
+import org.springframework.session.web.http.HeaderHttpSessionStrategy;
+import org.springframework.session.web.http.HttpSessionStrategy;
+
+import javax.sql.DataSource;
 
 @Slf4j
 @EnableGlobalAuthentication
@@ -22,6 +25,12 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Autowired
 	private Environment environment;
+
+	@Autowired
+    private UserDetailsService userDetailsService;
+
+	@Autowired
+    private LoginService loginService;
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
@@ -60,33 +69,14 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	}
 
-	@Autowired
-	public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		auth.inMemoryAuthentication()
-				.withUser("user@ggum2.net").password("P@ssw0rd").roles("USER")
-				.and()
-				.withUser("admin_mem@ggum2.net").password("P@ssw0rd").roles("USER", "ADMIN");
+    @Bean
+	public BCryptPasswordEncoder bCryptPasswordEncoder() {
+		return new BCryptPasswordEncoder();
 	}
 
-	@Configuration
-	static class AuthenticationConfiguration extends GlobalAuthenticationConfigurerAdapter {
-
-		@Autowired
-		private LoginService loginService;
-
-		@Bean
-		public BCryptPasswordEncoder bCryptPasswordEncoder() {
-			return new BCryptPasswordEncoder();
-		}
-
-		@Override
-		public void init(AuthenticationManagerBuilder auth) throws Exception {
-			auth.userDetailsService(loginService).passwordEncoder(bCryptPasswordEncoder());
-		}
-
-		@Override
-		public void configure(AuthenticationManagerBuilder auth) throws Exception {
-		}
+	@Autowired
+	public void configure(AuthenticationManagerBuilder auth) throws Exception {
+        auth.userDetailsService(userDetailsService).passwordEncoder(bCryptPasswordEncoder());
 	}
 
 }

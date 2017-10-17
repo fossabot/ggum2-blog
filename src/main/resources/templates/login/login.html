@@ -66,7 +66,7 @@
                     </div>
                   </div>
 
-                  <div class="mb-4" th:if="${param.error}">
+                  <div class="mb-4" th:if="${param.error}" id="loginError">
                     <p class="text-danger">로그인을 실패하였습니다. 아이디 또는 비밀번호를 확인하세요.</p>
                   </div>
 
@@ -114,5 +114,6 @@
 
     <!-- JS Customization -->
     <script type="javascript" th:src="@{/unify/js/custom.js}"></script>
+
   </body>
 </html>

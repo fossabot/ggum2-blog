@@ -1,10 +1,9 @@
 package net.ggum2.ggum2blog.controller;
 
 import lombok.extern.slf4j.Slf4j;
-import net.ggum2.ggum2blog.domain.User;
+import net.ggum2.ggum2blog.domain.Account;
 import net.ggum2.ggum2blog.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.beans.factory.annotation.Required;
 import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -38,27 +37,25 @@ public class LoginController {
 	}
 
 	@RequestMapping(value = "/signup", method = RequestMethod.POST)
-	public ModelAndView signup(
+	public String signup(
 			@RequestParam(required = true) String email,
 			@RequestParam(required = true) String name,
 			@RequestParam(required = true) String nickname,
 			@RequestParam(required = true) String password
 			) {
-		ModelAndView mv = new ModelAndView("redirect:/login");
-
-		User user = User.builder()
-				.username(email)
+		Account user = Account.builder()
+				.id(email)
 				.name(name)
 				.nickname(nickname)
 				.password(password)
 				.build();
 
-		UserDetails result = loginService.create(user);
+		boolean result = loginService.create(user);
 
-		if (result != null) {
-			mv.addObject("signupUser", result);
+		if (result) {
+			return "redirect:/";
+		} else {
+			return "redirect:/singup?error";
 		}
-
-		return mv;
 	}
 }
