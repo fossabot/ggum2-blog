@@ -16,7 +16,7 @@
 				</div>
 			</div>
 			<div class="js-countdown u-countdown-v3 g-line-height-1_2 g-font-weight-300 text-center text-uppercase"
-					data-end-date="2017/08/31"
+					data-end-date="2018/08/31"
 					data-month-format="%m" data-days-format="%D" data-hours-format="%H" data-minutes-format="%M" data-seconds-format="%S">
 
 				<div class="d-inline-block g-mx-20 g-mb-20">
@@ -53,20 +53,20 @@
 
 	<th:block layout:fragment="script">
 		<!-- Countdown JS -->
-		<script src="unify/vendor/jquery.countdown.min.js"></script>
-		<script src="unify/js/components/hs.countdown.js"></script>
-		<script>
-			$(document).on('ready', function() {
-				var countdowns = $.HSCore.components.HSCountdown.init( '.js-countdown', {
-					yearsElSelector : '.js-cd-years',
-					monthElSelector : '.js-cd-month',
-					daysElSelector : '.js-cd-days',
-					hoursElSelector : '.js-cd-hours',
-					minutesElSelector : '.js-cd-minutes',
-					secondsElSelector : '.js-cd-seconds',
-					elapse: true,
-				});
-			});
+		<script th:src="@{/unify/vendor/jquery.countdown.min.js}"></script>
+		<script th:src="@{/unify/js/components/hs.countdown.js}"></script>
+		<script >
+            $(document).on('ready', function () {
+                // initialization of countdowns
+                var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
+                    yearsElSelector: '.js-cd-years',
+                    monthElSelector: '.js-cd-month',
+                    daysElSelector: '.js-cd-days',
+                    hoursElSelector: '.js-cd-hours',
+                    minutesElSelector: '.js-cd-minutes',
+                    secondsElSelector: '.js-cd-seconds'
+                });
+            });
 		</script>
 	</th:block>
 </body>
