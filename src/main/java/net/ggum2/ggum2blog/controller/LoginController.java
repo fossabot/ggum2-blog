@@ -4,7 +4,6 @@ import lombok.extern.slf4j.Slf4j;
 import net.ggum2.ggum2blog.domain.Account;
 import net.ggum2.ggum2blog.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
-import org.springframework.security.core.userdetails.UserDetails;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestMethod;
@@ -58,4 +57,5 @@ public class LoginController {
 			return "redirect:/singup?error";
 		}
 	}
+
 }
