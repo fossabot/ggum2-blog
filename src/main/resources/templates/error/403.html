@@ -1,0 +1,22 @@
+<!DOCTYPE html>
+<html lang="en"
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="error/layout">
+<head>
+    <title>Access Denied</title>
+</head>
+<body>
+
+    <!--Status Code (ex> 403, 404, 500...)-->
+    <th:block layout:fragment="status">
+        403
+    </th:block>
+
+    <!--Error Message (ex> Page Not Found, Access Denied...)-->
+    <th:block layout:fragment="message">
+        Access Denied
+    </th:block>
+
+</body>
+</html>

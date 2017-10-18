@@ -1,0 +1,20 @@
+{
+  "name": "ggum2-blog",
+  "description": "Family project to record a history of my son",
+  "main": "",
+  "authors": [
+    "hyunto"
+  ],
+  "license": "",
+  "homepage": "",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+
+  }
+}
