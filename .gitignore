@@ -187,3 +187,5 @@ $RECYCLE.BIN/
 # Windows shortcuts
 *.lnk
 
+# Static files that can online download using Bower
+src/main/resources/static/bower/

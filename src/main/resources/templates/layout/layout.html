@@ -1,154 +1,127 @@
 <!DOCTYPE html>
+<!--[if IE 8]> <html lang="en" class="ie8" xmlns:th="http://www.thymeleaf.org" xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"> <![endif]-->
 <html lang="en"
-	  xmlns:th="http://www.thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout">
 <head>
-	<title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">알콩달콩 꿈이네</title>
+    <meta charset="utf-8" />
+    <title layout:title-pattern="$DECORATOR_TITLE - $CONTENT_TITLE">주원이네</title>
 
-	<!-- Required Meta Tags Always Come First -->
-	<meta charset="utf-8">
-	<meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
-	<meta http-equiv="x-ua-compatible" content="ie=edge">
+    <meta content="width=device-width, initial-scale=1.0, maximum-scale=1.0, user-scalable=no" name="viewport" />
+    <meta content="" name="description" />
+    <meta content="" name="author" />
 
-	<!-- favicon -->
-	<link rel="shortcut icon" href="favicon.ico" th:href="@{favicon.ico}">
+    <link rel="shortcut icon" th:href="@{/favicon.ico}">
 
-	<!-- Google Fonts -->
-	<link rel="stylesheet" href="https://fonts.googleapis.com/css?family=Open+Sans:400,300,600,700">
+    <!--Begin Base CSS Style-->
+    <link href="https://fonts.googleapis.com/css?family=Roboto:100,100italic,300,300italic,400,400italic,500,500italic,700,700italic,900,900italic" rel="stylesheet" type="text/css" />
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons" rel="stylesheet">
+    <link th:href="@{/color_material/plugins/jquery-ui/themes/base/minified/jquery-ui.min.css}" rel="stylesheet" />
+    <link th:href="@{/color_material/plugins/bootstrap/css/bootstrap.min.css}" rel="stylesheet" />
+    <link th:href="@{/color_material/plugins/font-awesome/css/font-awesome.min.css}" rel="stylesheet" />
+    <link th:href="@{/color_material/css/animate.min.css}" rel="stylesheet" />
+    <link th:href="@{/color_material/css/style.min.css}" rel="stylesheet" />
+    <link th:href="@{/color_material/css/style-responsive.min.css}" rel="stylesheet" />
+    <link th:href="@{/color_material/css/theme/default.css}" rel="stylesheet" id="theme" />
+    <!--End Base CSS Style-->
 
-	<!-- CSS Global Compulsory -->
-	<link rel="stylesheet" th:href="@{/unify/vendor/bootstrap/bootstrap.min.css}">
+    <!--Begin Base JS-->
+    <script th:src="@{/color_material/plugins/pace/pace.min.js}"></script>
+    <!--End Base JS-->
 
-	<!-- CSS Implementing Plugins -->
-	<link rel="stylesheet" th:href="@{/unify/vendor/icon-awesome/css/font-awesome.min.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/icon-line/css/simple-line-icons.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/icon-line-pro/style.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/icon-hs/style.css}">
+    <!--Begin Additional CSS and JS-->
+    <th:block layout:fragment="css">
 
-	<link rel="stylesheet" th:href="@{/unify/vendor/slick-carousel/slick/slick.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/dzsparallaxer/dzsparallaxer.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/dzsparallaxer/dzsscroller/scroller.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/dzsparallaxer/advancedscroller/plugin.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/fancybox/jquery.fancybox.min.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/hamburgers/hamburgers.min.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/hs-megamenu/src/hs.megamenu.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/animate.css}">
-	<link rel="stylesheet" th:href="@{/unify/vendor/malihu-scrollbar/jquery.mCustomScrollbar.css}">
-
-	<!-- CSS Unify -->
-	<link rel="stylesheet" th:href="@{/unify/css/unify.css}">
-
-	<!-- CSS Customization -->
-	<link rel="stylesheet" th:href="@{/unify/css/custom.css}">
-
-	<th:block layout:fragment="css">
-	</th:block>
+    </th:block>
+    <!--End Additional CSS and JS-->
 </head>
 
-<body class="u-body--header-side-static-left">
-	<!-- Sidebar Navigation -->
-	<div th:replace="layout/sidebar :: sidebar">
-		Sidebar
-	</div>
-	<!-- End Sidebar Navigation -->
+<body>
 
-	<!-- <main>  -->
+<!-- begin #page-loader -->
+<div id="page-loader">
+    <div class="material-loader">
+        <svg class="circular" viewBox="25 25 50 50">
+            <circle class="path" cx="50" cy="50" r="20" fill="none" stroke-width="2" stroke-miterlimit="10"/>
+        </svg>
+        <div class="message">Loading...</div>
+    </div>
+</div>
+<!-- end #page-loader -->
 
-	<!-- Contents -->
-	<div layout:fragment="content">
-		Content
-	</div>
-	<!-- End Contents -->
+<div id="page-container" class="fade page-sidebar-fixed page-header-fixed page-with-wide-sidebar">
+    <!--Start Header-->
+    <div th:replace="layout/header::header">
 
-	<!-- Footer -->
-	<footer th:replace="layout/footer :: footer">
-		Footer
-	</footer>
-	<!-- End Footer -->
+    </div>
+    <!--End Header-->
 
-	<!-- </main> -->
+    <!-- Start Sidebar -->
+    <div th:replace="layout/sidebar :: sidebar">
+        Sidebar
+    </div>
+    <!-- End Sidebar -->
 
 
-	<!-- JS Global Compulsory -->
-	<script th:src="@{/unify/vendor/jquery/jquery.min.js}"></script>
-	<script th:src="@{/unify/vendor/jquery-migrate/jquery-migrate.min.js}"></script>
-	<script th:src="@{/unify/vendor/tether.min.js}"></script>
-	<script th:src="@{/unify/vendor/bootstrap/bootstrap.min.js}"></script>
+    <!-- <main>  -->
+    <div id="content" class="content">
+        <!--Breadcrumb-->
+        <ol layout:fragment="breadcrumb">
+            Breadcrumb
+        </ol>
+        <!--End Breadcrumb-->
 
-	<!-- JS Implementing Plugins -->
-	<script th:src="@{/unify/vendor/masonry/dist/masonry.pkgd.min.js}"></script>
-	<script th:src="@{/unify/vendor/imagesloaded/imagesloaded.pkgd.min.js}"></script>
-	<script th:src="@{/unify/vendor/slick-carousel/slick/slick.js}"></script>
-	<script th:src="@{/unify/vendor/fancybox/jquery.fancybox.min.js}"></script>
-	<script th:src="@{/unify/vendor/dzsparallaxer/dzsparallaxer.js}"></script>
-	<script th:src="@{/unify/vendor/dzsparallaxer/dzsscroller/scroller.js}"></script>
-	<script th:src="@{/unify/vendor/dzsparallaxer/advancedscroller/plugin.js}"></script>
-	<script th:src="@{/unify/vendor/hs-megamenu/src/hs.megamenu.js}"></script>
-	<script th:src="@{/unify/vendor/malihu-scrollbar/jquery.mCustomScrollbar.concat.min.js}"></script>
+        <!--Header-->
+        <h1 layout:fragment="header">
+            Header
+        </h1>
+        <!--End Header-->
 
-	<!-- JS Unify -->
-	<script th:src="@{/unify/js/hs.core.js}"></script>
-	<script th:src="@{/unify/js/components/hs.header-side.js}"></script>
-	<script th:src="@{/unify/js/components/hs.dropdown.js}"></script>
-	<script th:src="@{/unify/js/components/hs.scrollbar.js}"></script>
-	<script th:src="@{/unify/js/helpers/hs.hamburgers.js}"></script>
-	<script th:src="@{/unify/js/components/hs.popup.js}"></script>
-	<script th:src="@{/unify/js/components/hs.carousel.js}"></script>
+        <!-- Contents -->
+        <div layout:fragment="content">
+            Content
+        </div>
+        <!-- End Contents -->
+    </div>
 
-	<!-- JS Custom -->
-	<script th:src="@{/unify/js/custom.js}"></script>
+    <!-- Footer -->
+    <!--<footer th:replace="layout/footer :: footer">-->
+        <!--Footer-->
+    <!--</footer>-->
+    <!-- End Footer -->
+    <!-- </main> -->
 
-	<!-- JS Plugins Init. -->
-	<script>
-        $(document).on('ready', function () {
-            $('#we-provide').slick('setOption', 'responsive', [{
-                breakpoint: 992,
-                settings: {
-                    slidesToShow: 2
-                }
-            }, {
-                breakpoint: 576,
-                settings: {
-                    slidesToShow: 1
-                }
-            }], true);
 
-            // initialization of HSDropdown component
-            $.HSCore.components.HSDropdown.init($('[data-dropdown-target]'), {
-                afterOpen: function(){
-                    $(this).find('input[type="search"]').focus();
-                }
-            });
 
-            // initialization of masonry
-            $('.masonry-grid').imagesLoaded().then(function () {
-                $('.masonry-grid').masonry({
-                    columnWidth: '.masonry-grid-sizer',
-                    itemSelector: '.masonry-grid-item',
-                    percentPosition: true
-                });
-            });
+</div>
 
-            // initialization of popups
-            $.HSCore.components.HSPopup.init('.js-fancybox');
-        });
+<!--Begin Base JS-->
+<script th:src="@{/color_material/plugins/jquery/jquery-1.9.1.min.js}"></script>
+<script th:src="@{/color_material/plugins/jquery/jquery-migrate-1.1.0.min.js}"></script>
+<script th:src="@{/color_material/plugins/jquery-ui/ui/minified/jquery-ui.min.js}"></script>
+<script th:src="@{/color_material/plugins/bootstrap/js/bootstrap.min.js}"></script>
+<!--[if lt IE 9]>
+<script th:src="@{/color_material/crossbrowserjs/html5shiv.js}"></script>
+<script th:src="@{/color_material/crossbrowserjs/respond.min.js}"></script>
+<script th:src="@{/color_material/crossbrowserjs/excanvas.min.js}"></script>
+<![endif]-->
+<script th:src="@{/color_material/plugins/slimscroll/jquery.slimscroll.min.js}"></script>
+<script th:src="@{/color_material/plugins/jquery-cookie/jquery.cookie.js}"></script>
+<!--End Base JS-->
 
-        $(window).on('load', function () {
-            // initialization of header
-            $.HSCore.components.HSHeaderSide.init($('#js-header'));
-            $.HSCore.helpers.HSHamburgers.init('.hamburger');
+<!--Begin Page Level JS-->
+<script th:src="@{/color_material/js/apps.min.js}"></script>
+<!--End Page Level JS-->
 
-            // initialization of HSMegaMenu component
-            $('.js-mega-menu').HSMegaMenu({
-                event: 'hover',
-                direction: 'vertical',
-                breakpoint: 991
-            });
-        });
-	</script>
+<script>
+    $(document).ready(function() {
+        App.init();
+    });
+</script>
 
-	<th:block layout:fragment="script">
-	</th:block>
-
+<!--Begin Additional JS in Body-->
+<th:block layout:fragment="script">
+</th:block>
+<!--End Additional JS in Body-->
 </body>
 </html>
