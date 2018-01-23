@@ -91,6 +91,10 @@
     <!-- End Footer -->
     <!-- </main> -->
 
+    <div>
+        <form id="logout" th:action="@{/logout}" method="post">
+        </form>
+    </div>
 
 
 </div>
@@ -111,6 +115,7 @@
 
 <!--Begin Page Level JS-->
 <script th:src="@{/color_material/js/apps.min.js}"></script>
+<script th:src="@{/custom/js/logout.js}"></script>
 <!--End Page Level JS-->
 
 <script>

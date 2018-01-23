@@ -99,6 +99,7 @@
                     </p>
                 </form>
                 <input type="hidden" th:if="${param.error}" id="errorIndicator" value="true">
+                <input type="hidden" th:if="${param.logout}" id="logoutIndicator" value="true">
             </div>
             <!-- end login-content -->
         </div>
@@ -125,20 +126,12 @@
 <!-- ================== BEGIN PAGE LEVEL JS ================== -->
 <script th:src="@{/color_material/js/apps.min.js}"></script>
 <script th:src="@{/color_material/plugins/gritter/js/jquery.gritter.js}"></script>
+<script th:src="@{/custom/js/login.js}"></script>
 <!-- ================== END PAGE LEVEL JS ================== -->
 
 <script>
     $(document).ready(function() {
         App.init();
-
-        var isLoginFailed = $('#errorIndicator').val();
-        if (isLoginFailed) {
-            $.gritter.add({
-                title: 'Login Failed',
-                text: '로그인을 실패했습니다.<br>아이디 또는 비밀번호를 다시 확인해 주세요.',
-                time: ''
-            })
-        }
     });
 </script>
 </body>
