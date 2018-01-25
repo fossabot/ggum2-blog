@@ -45,7 +45,6 @@ public class LoginController {
 				.name(name)
 				.nickname(nickname)
 				.password(password)
-				.enable(false)
 				.build();
 
 		boolean result = loginService.create(user);

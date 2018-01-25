@@ -28,6 +28,8 @@
     <!-- ================== BEGIN BASE JS ================== -->
     <script th:src="@{/color_material/plugins/pace/pace.min.js}"></script>
     <!-- ================== END BASE JS ================== -->
+
+    <script src="https://www.google.com/recaptcha/api.js"></script>
 </head>
 <body class="pace-top bg-white">
 <!-- begin #page-loader -->
@@ -86,6 +88,9 @@
                         <label>
                             <input type="checkbox" /> Remember Me
                         </label>
+                    </div>
+                    <div class="form-group m-b-15">
+                        <div class="g-recaptcha" data-sitekey="6Ld9iUIUAAAAAIroZpej6tHyQFPFwoYV74GAUrP9"></div>
                     </div>
                     <div class="login-buttons">
                         <button type="submit" class="btn btn-info btn-block btn-lg">Sign In</button>
