@@ -1,73 +1,42 @@
 <!DOCTYPE html>
 <html lang="en"
-	  xmlns:th="http://www.thymeleaf.org"
-	  xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
-	  layout:decorator="layout/layout">
+      xmlns:th="http://www.thymeleaf.org"
+      xmlns:layout="http://www.ultraq.net.nz/thymeleaf/layout"
+      layout:decorator="layout/layout">
 <head>
-	<title>Home</title>
+    <title>Home</title>
 </head>
+
 <body>
-	<div layout:fragment="content">
-		<!-- Countdown -->
-		<section class="g-bg-gray-dark-v1 g-color-white g-py-10">
-			<div class="container">
-				<div class="text-center g-mb-60">
-					<h2 class="h4">D-Day</h2>
-				</div>
-			</div>
-			<div class="js-countdown u-countdown-v3 g-line-height-1_2 g-font-weight-300 text-center text-uppercase"
-					data-end-date="2018/08/31"
-					data-month-format="%m" data-days-format="%D" data-hours-format="%H" data-minutes-format="%M" data-seconds-format="%S">
+<ol layout:fragment="breadcrumb" class="breadcrumb pull-right">
+    <li><a href="javascript:;">Home</a></li>
+    <li><a href="javascript:;">Page Options</a></li>
+    <li class="active">Page with Footer</li>
+</ol>
 
-				<div class="d-inline-block g-mx-20 g-mb-20">
-					<div class="js-cd-days g-font-size-36 mb-0">12</div>
-					<span class="g-font-size-12">Days</span>
-				</div>
+<h1 layout:fragment="header" class="page-header">
+    Page with Footer <small>header small text goes here...</small>
+</h1>
 
-				<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
+<div layout:fragment="content">
+    <div class="panel panel-inverse">
+        <div class="panel-heading">
+            <div class="panel-heading-btn">
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-default" data-click="panel-expand"><i class="fa fa-expand"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-success" data-click="panel-reload"><i class="fa fa-repeat"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-warning" data-click="panel-collapse"><i class="fa fa-minus"></i></a>
+                <a href="javascript:;" class="btn btn-xs btn-icon btn-circle btn-danger" data-click="panel-remove"><i class="fa fa-times"></i></a>
+            </div>
+            <h4 class="panel-title">Panel Title here</h4>
+        </div>
+        <div class="panel-body">
+            Panel Content Here
+        </div>
+    </div>
+</div>
 
-				<div class="d-inline-block g-mx-20 g-mb-20">
-					<div class="js-cd-hours g-font-size-36 mb-0">01</div>
-					<span class="g-font-size-12">Hours</span>
-				</div>
+<th:block layout:fragment="script">
 
-				<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
-
-				<div class="d-inline-block g-mx-20 g-mb-20">
-					<div class="js-cd-minutes g-font-size-36 mb-0">52</div>
-					<span class="g-font-size-12">Minutes</span>
-				</div>
-
-				<div class="hidden-down d-inline-block align-top g-font-size-36">:</div>
-
-				<div class="d-inline-block g-mx-20 g-mb-20">
-					<div class="js-cd-seconds g-font-size-36 mb-0">52</div>
-					<span class="g-font-size-12">Seconds</span>
-				</div>
-			</div>
-		</section>
-		<!-- End Countdown -->
-
-		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
-	</div>
-
-	<th:block layout:fragment="script">
-		<!-- Countdown JS -->
-		<script th:src="@{/unify/vendor/jquery.countdown.min.js}"></script>
-		<script th:src="@{/unify/js/components/hs.countdown.js}"></script>
-		<script >
-            $(document).on('ready', function () {
-                // initialization of countdowns
-                var countdowns = $.HSCore.components.HSCountdown.init('.js-countdown', {
-                    yearsElSelector: '.js-cd-years',
-                    monthElSelector: '.js-cd-month',
-                    daysElSelector: '.js-cd-days',
-                    hoursElSelector: '.js-cd-hours',
-                    minutesElSelector: '.js-cd-minutes',
-                    secondsElSelector: '.js-cd-seconds'
-                });
-            });
-		</script>
-	</th:block>
+</th:block>
 </body>
 </html>

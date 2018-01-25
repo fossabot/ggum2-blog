@@ -1,0 +1,34 @@
+spring:
+  profiles: dev
+
+  redis:
+    host: 127.0.0.1
+    port: 6380
+
+  devtools:
+    livereload:
+      enabled: true
+    restart:
+      enabled: true
+      additional-exclude: classpath:db
+  thymeleaf:
+    cache: false
+
+  datasource:
+    driver-class-name: org.h2.Driver
+    url: jdbc:h2:mem:testdb
+    username: sa
+    password:
+    pool-size: 30
+  h2:
+    console:
+      enabled: true
+  jpa:
+    show-sql: true
+    generate-ddl: true
+    hibernate:
+      ddl-auto: create-drop
+
+logging:
+  level:
+    org.springframework.*: DEBUG

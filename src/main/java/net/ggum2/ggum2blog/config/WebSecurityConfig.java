@@ -2,6 +2,7 @@ package net.ggum2.ggum2blog.config;
 
 import lombok.extern.slf4j.Slf4j;
 import net.ggum2.ggum2blog.config.interceptor.CustomWebSecurityFilter;
+import net.ggum2.ggum2blog.domain.enums.Role;
 import net.ggum2.ggum2blog.service.LoginService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.context.annotation.Bean;
@@ -34,7 +35,7 @@ public class WebSecurityConfig extends WebSecurityConfigurerAdapter {
 
 	@Override
 	public void configure(WebSecurity web) throws Exception {
-		web.ignoring().antMatchers("/unify/**", "/custom/**");
+		web.ignoring().antMatchers("/color_material/**", "/custom/**", "/favicon.ico");
 	}
 
 	@Override
