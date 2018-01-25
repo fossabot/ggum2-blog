@@ -6,172 +6,94 @@
 </head>
 
 <body>
-	<!-- Sidebar Navigation -->
-	<div th:fragment="sidebar" id="js-header" class="u-header u-header--side" data-header-position="left" data-header-breakpoint="lg">
-		<div class="u-header__sections-container g-bg-white g-brd-right--lg g-brd-gray-light-v5 g-py-10 g-py-10--lg g-px-14--lg">
-			<div class="u-header__section u-header__section--light">
-				<nav class="navbar navbar-toggleable-md">
-					<div class="js-mega-menu container">
+<!-- Sidebar Navigation -->
+<div th:fragment="sidebar">
+    <!-- begin #sidebar -->
+    <div id="sidebar" class="sidebar">
+        <!-- begin sidebar scrollbar -->
+        <div data-scrollbar="true" data-height="100%">
 
-						<!-- Responsive Toggle Button -->
-						<button class="navbar-toggler navbar-toggler-right btn g-line-height-1 g-brd-none g-pa-0 g-pos-abs g-right-0"
-							type="button" aria-label="Toggle navigation" aria-expanded="false" aria-controls="navBar" data-toggle="collapse" data-target="#navBar">
-							<span class="hamburger hamburger--slider">
-								<span class="hamburger-box">
-									<span class="hamburger-inner"></span>
-								</span>
-							</span>
-						</button>
-						<!-- End Responsive Toggle Button -->
+            <!-- begin sidebar user -->
+            <ul class="nav">
+                <li class="nav-profile">
+                    <a href="#" data-toggle="nav-profile">
+                        <div class="image">
+                            <img th:src="@{/custom/img/user.png}" alt="" />
+                        </div>
+                        <div class="info">
+                            <b class="caret pull-right"></b>
+                            <th:block sec:authentication="principal.nickname">Nickname</th:block>
+                            <small>
+                                <th:block sec:authentication="principal.username">Username</th:block>
+                            </small>
+                        </div>
+                    </a>
+                </li>
+                <li>
+                    <ul class="nav nav-profile">
+                        <li><a href="#"><i class="material-icons">account_circle</i> Profile</a></li>
+                        <li><a href="#"><i class="material-icons">settings</i> Settings</a></li>
+                        <li><a href="#" onclick="logout()"><i class="material-icons">power</i> Logout</a></li>
+                    </ul>
+                </li>
+            </ul>
+            <!-- end sidebar user -->
 
-
-						<!-- AccountUser Info-->
-						<div class="row" style="margin-right: 20px;">
-							<!-- Figure -->
-							<figure class="u-block-hover g-bg-white g-rounded-4 g-pa-10">
-								<div class="d-flex justify-content-start">
-									<!-- Figure Image -->
-									<img class="g-width-60 g-height-60 rounded-circle g-mr-15" th:src="@{/custom/img/user.png}" alt="User Image">
-									<!-- Figure Image -->
-
-									<!-- Figure Info -->
-									<div class="d-block">
-										<div class="g-mb-5">
-											<h4 class="h5 g-mb-0" sec:authentication="principal.nickname">정현수</h4>
-											<em class="d-block g-color-primary g-font-style-normal g-font-size-default" sec:authentication="principal.role">Admin</em>
-											<em class="d-block g-color-gray-dark-v5 g-font-style-normal g-font-size-13 g-mb-2" sec:authentication="name">admin@ggum2.net</em>
-										</div>
-									</div>
-									<!-- End Figure Info -->
-
-									<!-- Figure Caption -->
-									<figcaption class="u-block-hover__additional--fade g-bg-white-opacity-0_9 g-pa-10">
-										<div class="u-block-hover__additional--fade u-block-hover__additional--fade-down g-flex-middle">
-											<!-- Figure Social Icons -->
-											<ul class="list-inline text-center g-flex-middle-item">
-												<li class="list-inline-item align-middle g-mx-7">
-													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
-														<i class="icon-user"></i>
-													</a>
-												</li>
-												<li class="list-inline-item align-middle g-mx-7">
-													<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#">
-														<i class="icon-settings"></i>
-													</a>
-												</li>
-												<li class="list-inline-item align-middle g-mx-7">
-													<form th:action="@{/logout}" action="/logout" method="post">
-														<a class="u-icon-v1 u-icon-size--md g-color-gray-dark-v5 g-color-primary--hover" href="#" onclick="this.parentNode.submit()">
-															<i class="icon-logout"></i>
-														</a>
-													</form>
-												</li>
-											</ul>
-											<!-- End Figure Social Icons -->
-										</div>
-									</figcaption>
-									<!-- End Figure Caption -->
-								</div>
-							</figure>
-							<!-- End Figure -->
-						</div>
-						<!-- AccountUser Info -->
-
-
-						<!-- Navigation -->
-						<div class="collapse navbar-collapse align-items-center flex-sm-row g-mt-20 g-mt-0--lg g-mb-40" id="navBar">
-							<ul class="navbar-nav ml-auto text-uppercase g-font-weight-600 u-sub-menu-v1">
-
-								<!--Home-->
-								<li class="nav-item active g-my-5">
-									<a href="/" class="nav-link" id="home" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">
-										Home<span class="sr-only">(current)</span>
-									</a>
-								</li>
-								<!--End Home-->
-
-								<!--Picture-->
-								<li class="nav-item hs-has-sub-menu g-my-5">
-									<a href="#" class="nav-link" id="nav-link-1" aria-haspopup="true" aria-expanded="false" aria-controls="nav-submenu-1">
-										Picture <span class="sr-only">(current)</span>
-									</a>
-
-									<!-- Submenu -->
-									<ul class="hs-sub-menu list-unstyled animated" id="nav-submenu-1" aria-labelledby="nav-link-1">
-										<li><a href="#">Option 1</a></li>
-										<li><a href="#">Option 2</a></li>
-									</ul>
-									<!-- End Submenu -->
-								</li>
-								<!--End Picture-->
-
-								<!--Daily-->
-								<li class="nav-item g-my-5">
-									<a href="#" class="nav-link">Daily</a>
-								</li>
-								<!--End Daily-->
-
-								<!--To-Do List-->
-								<li class="nav-item g-my-5">
-									<a href="#" class="nav-link">TO-DO List</a>
-								</li>
-								<!--End To-Do List-->
-
-								<!--Tech Blog-->
-								<li class="nav-item g-my-5">
-									<a href="#" class="nav-link">Tech Blog</a>
-								</li>
-								<!--End Tech Blog-->
-
-								<!--Bludprint-->
-								<li class="nav-item g-my-5">
-									<a href="#" class="nav-link">Blueprint</a>
-								</li>
-								<!--End Bludprint-->
-
-								<hr>
-
-								<!--User-->
-								<li class="nav-item g-my-5">
-									<a href="#" class="nav-link">Notice</a>
-								</li>
-								<!--End User-->
-
-								<!--User-->
-								<li class="nav-item g-my-5">
-									<a href="#" class="nav-link">User</a>
-								</li>
-								<!--End User-->
-							</ul>
-						</div>
-						<!-- End Navigation -->
-
-						<div class="text-center hidden-lg-down">
-							<ul class="list-inline g-mb-10">
-								<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="" data-original-title="Facebook">
-									<a href="#" class="g-color-main g-color-primary--hover">
-										<i class="fa fa-facebook"></i>
-									</a>
-								</li>
-								<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="" data-original-title="GitHub">
-									<a href="https://github.com/hyunto/ggum2-blog" class="g-color-main g-color-primary--hover">
-										<i class="fa fa-github"></i>
-									</a>
-								</li>
-								<li class="list-inline-item g-mx-10" data-toggle="tooltip" data-placement="top" title="" data-original-title="Trello">
-									<a href="#" class="g-color-main g-color-primary--hover">
-										<i class="fa fa-trello"></i>
-									</a>
-								</li>
-							</ul>
-
-							<p class="mb-0">2017 &copy; All Rights Reserved.</p>
-						</div>
-					</div>
-				</nav>
-			</div>
-		</div>
-	</div>
-	<!-- End Sidebar Navigation -->
+            <!-- begin sidebar nav -->
+            <ul class="nav">
+                <li class="nav-header">Applications</li>
+                <li class="has-sub">
+                    <a th:href="@{/}">
+                        <i class="material-icons">home</i>
+                        <span>Home</span>
+                    </a>
+                </li>
+                <li class="has-sub">
+                    <a href="javascript:;">
+                        <b class="caret pull-right"></b>
+                        <i class="material-icons">inbox</i>
+                        <span>Picture</span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#">Story</a></li>
+                        <li><a href="#">Galary</a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="javascript:;">
+                        <b class="caret pull-right"></b>
+                        <i class="material-icons">toys</i>
+                        <span>Daily <span class="label label-theme m-l-5">NEW</span></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="#">General</a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="javascript:;">
+                        <b class="caret pull-right"></b>
+                        <i class="material-icons">insert_drive_file</i>
+                        <span>TO-DO List<span class="label label-theme m-l-5">NEW</span></span>
+                    </a>
+                    <ul class="sub-menu">
+                        <li><a href="form_elements.html">Form Elements <i class="fa fa-paper-plane text-theme m-l-5"></i></a></li>
+                    </ul>
+                </li>
+                <li class="has-sub">
+                    <a href="javascript:;">
+                        <i class="material-icons">grid_on</i>
+                        <span>Tech Blog</span>
+                    </a>
+                </li>
+                <!-- begin sidebar minify button -->
+                <li><a href="javascript:;" class="sidebar-minify-btn" data-click="sidebar-minify"><i class="fa fa-angle-double-left"></i></a></li>
+                <!-- end sidebar minify button -->
+            </ul>
+            <!-- end sidebar nav -->
+        </div>
+        <!-- end sidebar scrollbar -->
+    </div>
+    <div class="sidebar-bg"></div>
+    <!-- end #sidebar -->
 </body>
 </html>
